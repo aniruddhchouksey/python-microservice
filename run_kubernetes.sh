@@ -4,7 +4,7 @@
 
 # Step 1:
 # This is your Docker ID/path
-dockerpath=aniruddhchouksey/python-prediction
+dockerpath=aniruddhchouksey/python-prediction:0.1
 
 # Step 2
 # Run the Docker Hub container with kubernetes

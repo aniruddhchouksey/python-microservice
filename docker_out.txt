@@ -1,22 +1,25 @@
-[+] Building 30.7s (9/9) FINISHED
+[+] Building 53.6s (10/10) FINISHED
  => [internal] load build definition from Dockerfile                                                                                                                                                                               0.0s
  => => transferring dockerfile: 37B                                                                                                                                                                                                0.0s
  => [internal] load .dockerignore                                                                                                                                                                                                  0.0s
  => => transferring context: 2B                                                                                                                                                                                                    0.0s
- => [internal] load metadata for docker.io/library/python:3.7.3-stretch                                                                                                                                                            2.3s
- => [internal] load build context                                                                                                                                                                                                  0.5s
- => => transferring context: 798.33kB                                                                                                                                                                                              0.5s
+ => [internal] load metadata for docker.io/library/python:3.7.3-stretch                                                                                                                                                            2.7s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                                                                      0.0s
  => [1/4] FROM docker.io/library/python:3.7.3-stretch@sha256:205cafadbb7f0c48f2a6d655eb100a9675aa85e6e73958860f488406cce09779                                                                                                      0.0s
+ => [internal] load build context                                                                                                                                                                                                  4.1s
+ => => transferring context: 82.14MB                                                                                                                                                                                               4.0s
  => CACHED [2/4] WORKDIR /project                                                                                                                                                                                                  0.0s
- => [3/4] COPY . /project                                                                                                                                                                                                          1.2s
- => [4/4] RUN pip install --no-cache-dir -r requirements.txt                                                                                                                                                                      24.2s
- => exporting to image                                                                                                                                                                                                             2.4s
- => => exporting layers                                                                                                                                                                                                            2.3s
- => => writing image sha256:aee7d1f9497ab9adc42d83f2ce9a9370c1b6712e44797ba6e9744510d989abea                                                                                                                                       0.0s
+ => [3/4] COPY . /project                                                                                                                                                                                                          3.8s
+ => [4/4] RUN pip install --no-cache-dir -r requirements.txt                                                                                                                                                                      36.8s
+ => exporting to image                                                                                                                                                                                                             6.1s
+ => => exporting layers                                                                                                                                                                                                            6.1s
+ => => writing image sha256:4fef5d56c7bcd9b1e397449433dfdef59abcd3364d13c8f1f5cdfb15d4f5355e                                                                                                                                       0.0s
  => => naming to docker.io/library/prediction:latest                                                                                                                                                                               0.0s
 
 Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
-prediction                                                                                          latest                                                     aee7d1f9497a   3 seconds ago   1.51GB
+prediction                                                                                          latest                                                     4fef5d56c7bc   7 seconds ago   1.59GB
+aniruddhchouksey/python-prediction                                                                  latest                                                     aee7d1f9497a   2 days ago      1.51GB
+aniruddhchouksey/python-predictionatest                                                             latest                                                     aee7d1f9497a   2 days ago      1.51GB
  * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -25,15 +28,17 @@ prediction                                                                      
  * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
  * Restarting with stat
  * Debugger is active!
- * Debugger PIN: 523-717-820
-[2021-12-14 16:16:07,627] INFO in app: JSON payload:
+ * Debugger PIN: 194-414-639
+[2021-12-16 18:00:33,633] INFO in app: JSON payload:
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2021-12-14 16:16:07,639] INFO in app: Inference payload DataFrame:
+[2021-12-16 18:00:33,652] INFO in app: Inference payload DataFrame:
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2021-12-14 16:16:07,648] INFO in app: Scaling Payload:
+[2021-12-16 18:00:33,666] INFO in app: Scaling Payload:
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2021-12-14 16:16:07,650] INFO in app: Scaled input payload:
+[2021-12-16 18:00:33,671] INFO in app: Scaled input payload:
 [[0. 0. 0. 0. 0. 0.]]
-[2021-12-14 16:16:07,651] INFO in app: Resultant Prediction:
+[2021-12-16 18:00:33,672] INFO in app: Resultant Prediction:
+[20.35373177134412]
+172.17.0.1 - - [16/Dec/2021 18:00:33] "POST /predict HTTP/1.1" 200 -
